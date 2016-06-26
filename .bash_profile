@@ -2,6 +2,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 alias magento='docker-compose exec phpfpm ./bin/magento'
 alias composer='docker-compose exec phpfpm composer'
+alias recreate='docker-compose stop && docker-compose rm -f && docker-compose up -d'
 
 # Git branch in prompt.
 parse_git_branch() {
