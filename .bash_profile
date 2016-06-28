@@ -1,8 +1,13 @@
 export PATH="/usr/local/sbin:$PATH"
 
-alias magento='docker-compose exec phpfpm ./bin/magento'
-alias composer='docker-compose exec phpfpm composer'
+export COMPOSER_PROCESS_TIMEOUT=3000
+
 alias recreate='docker-compose stop && docker-compose rm -f && docker-compose up -d'
+alias logs='docker logs -f folder_setup_1'
+alias docker-exec='docker-compose exec phpfpm'
+alias magento='docker-exec ./bin/magento'
+alias docker-composer='docker-exec composer'
+alias docker-pull='docker-exec git pull origin master'
 
 # Git branch in prompt.
 parse_git_branch() {
